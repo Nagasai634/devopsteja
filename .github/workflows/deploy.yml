@@ -74,7 +74,7 @@ jobs:
       - name: Deploy to EKS
         run: |
           # Apply service and deployment from k8s/ folder
+          kubectl apply -f k8s/deployement.yml
           kubectl apply -f k8s/service.yml
-          kubectl apply -f k8s/deployment.yml
           kubectl set image deployment/springboot-app \
             springboot-app=$ECR_REPOSITORY:$IMAGE_TAG
